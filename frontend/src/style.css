@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Palette and type follow the Sprint 0 one-pager. */
+@theme {
+  --color-paper: #F6F4EE;
+  --color-paper-2: #EFE9DC;
+  --color-card: #FFFFFF;
+  --color-ink: #16211D;
+  --color-ink-2: #3B443E;
+  --color-muted: #6B6257;
+  --color-faint: #A89A82;
+  --color-line: #E0D9CB;
+  --color-line-2: #EDE7DA;
+  --color-line-strong: #DDD3BF;
+  --color-pine: #2F6B5E;
+  --color-pine-dark: #245347;
+  --color-pine-soft: #EEF4F2;
+  --color-pine-line: #C6D6D0;
+  --color-rust: #B4501F;
+  --color-rust-dark: #8C3D16;
+  --color-rust-soft: #FBEFE8;
+  --color-danger: #A3261B;
+  --color-danger-soft: #FBEAE8;
+  /* Chart series (validated pair) */
+  --color-cash: #0E8A6A;
+  --color-qr: #C4862A;
+
+  --font-sans: "IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --font-serif: "Trirong", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-paper text-ink font-sans; }
+  :focus-visible { outline: 2px solid var(--color-pine); outline-offset: 2px; }
+}
+
+@layer components {
+  .card { @apply bg-card border border-line rounded-xl; }
+  .h-title { @apply font-serif font-semibold text-ink; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-wide text-muted; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 h-10 text-sm font-semibold
+      transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none;
+  }
+  .btn-primary { @apply bg-pine text-white hover:bg-pine-dark; }
+  .btn-dark { @apply bg-ink text-paper hover:bg-ink-2; }
+  .btn-accent { @apply bg-rust text-white hover:bg-rust-dark; }
+  .btn-ghost { @apply bg-card border border-line text-ink hover:bg-paper-2; }
+  .btn-danger { @apply bg-card border border-danger/40 text-danger hover:bg-danger-soft; }
+  .btn-sm { @apply h-8 px-3 text-[13px]; }
+
+  .input {
+    @apply w-full h-10 rounded-lg border border-line bg-card px-3 text-sm text-ink
+      placeholder:text-faint focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/20;
+  }
+  .label { @apply block text-[13px] font-medium text-ink-2 mb-1.5; }
+
+  .table { @apply w-full text-sm; }
+  .table th { @apply text-left text-[11px] font-semibold uppercase tracking-wide text-muted px-4 py-2.5 border-b border-line bg-paper/60; }
+  .table td { @apply px-4 py-3 border-b border-line-2 text-ink-2; }
+  .table tr:last-child td { @apply border-b-0; }
+
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium border; }
+  .plate { @apply font-semibold text-ink tracking-wide; }
+  .num { font-variant-numeric: tabular-nums; }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; inset: 0 auto auto 0; width: 80mm; }
+}

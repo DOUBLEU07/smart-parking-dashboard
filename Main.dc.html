@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Sprint 0 One-Pager — Smart Parking Dashboard</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Trirong:wght@500;600;700&amp;display=swap">
+<style>
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+body {
+  margin: 0;
+  background: #F6F4EE;
+  font-family: 'IBM Plex Sans Thai','Noto Sans Thai',sans-serif;
+  color: #16211D;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+a { color: #B4501F; }
+a:hover { color: #8C3D16; }
+</style>
+</helmet>
+
+<div style="width: 794px; height: 1123px; box-sizing: border-box; background: #F6F4EE; display: flex; flex-direction: column; overflow: hidden; padding: 24px 44px 18px 44px;">
+
+  <!-- Header: Title only, no background, no letter-spacing -->
+  <div style="padding-bottom: 7px; border-bottom: 1.5px solid #DDD3BF; margin-bottom: 10px;">
+    <h1 style="margin: 0; font-family: 'Trirong', serif; font-size: 28px; font-weight: 700; line-height: 1.15; color: #16211D;">Smart Parking Dashboard</h1>
+  </div>
+
+  <!-- Body Content: 8 Sections -->
+  <div style="display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+
+    <!-- Row 1: Section 1 (Problem) + Section 2 (Target Customer) -->
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+
+      <!-- 1. Problem -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">1</span>
+          <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">ปัญหา</span>
+          <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Problem</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 7px; flex-grow: 1;">
+          <p style="margin: 0; font-size: 11.5px; font-weight: 600; line-height: 1.4; color: #16211D;">เจ้าของลานจอดรถขนาดเล็ก/กลางอาจไม่มีภาพรวมสถานะลานแบบ Real-time</p>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #B4501F; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ไม่รู้ว่าช่องจอดว่างกี่ช่อง</span></div>
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #B4501F; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ตรวจสอบรถเข้า–ออกได้ยาก</span></div>
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #B4501F; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ไม่เห็นรายได้ปัจจุบันทันที</span></div>
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #B4501F; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ต้องพึ่งการจดบันทึกหรือหลายระบบ</span></div>
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #B4501F; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ทำให้ตัดสินใจบริหารลานได้ช้าลง</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Target Customer -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">2</span>
+          <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">กลุ่มผู้ใช้</span>
+          <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Target Customer</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 9.5px; font-weight: 700; text-transform: uppercase; color: #2F6B5E;">Primary User</span>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div style="display: flex; gap: 7px; align-items: center;"><span style="width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">เจ้าของลานจอดรถ</span></div>
+              <div style="display: flex; gap: 7px; align-items: center;"><span style="width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ผู้ดูแลลานจอดรถ</span></div>
+            </div>
+          </div>
+          <div style="height: 1px; background: #EDE7DA;"></div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 9.5px; font-weight: 700; text-transform: uppercase; color: #6B6257;">Secondary User</span>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div style="display: flex; gap: 7px; align-items: center;"><span style="width: 4px; height: 4px; border-radius: 50%; background: #6B6257; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">พนักงานประจำลาน</span></div>
+              <div style="display: flex; gap: 7px; align-items: center;"><span style="width: 4px; height: 4px; border-radius: 50%; background: #6B6257; flex-shrink: 0;"></span><span style="font-size: 11.5px; line-height: 1.4; color: #3B443E;">ผู้ที่ดูแลการเข้า–ออกและการชำระเงิน</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: Section 3 (Solution) Full Width -->
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">3</span>
+        <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">โซลูชัน</span>
+        <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Solution — Web Dashboard</span>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 10px; padding: 11px 14px; display: flex; flex-direction: column; gap: 8px;">
+        <p style="margin: 0; font-size: 11.5px; font-weight: 600; line-height: 1.4; color: #16211D;">Web Dashboard สำหรับติดตามสถานะลานจอดและรายได้แบบ Real-time</p>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 14px;">
+          <div style="display: flex; gap: 6px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">แสดงจำนวนช่องว่าง / ช่องที่ถูกใช้งาน</span></div>
+          <div style="display: flex; gap: 6px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">แสดงรถเข้า–ออก</span></div>
+          <div style="display: flex; gap: 6px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">แสดงรายได้ปัจจุบัน</span></div>
+          <div style="display: flex; gap: 6px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">Dashboard สรุปข้อมูลสำคัญ</span></div>
+          <div style="display: flex; gap: 6px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #B4501F; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">แจ้งเตือนเมื่อพื้นที่จอดใกล้เต็ม</span></div>
+          <div style="display: flex; gap: 6px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">ดูประวัติการจอดและรายได้</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Section 4 (Demo Flow) Full Width -->
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">4</span>
+        <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">ลำดับการสาธิต</span>
+        <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Demo Flow</span>
+      </div>
+      <div style="display: flex; align-items: stretch; gap: 5px;">
+        <div style="flex-grow: 1; background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 500; color: #16211D; display: flex; align-items: center; justify-content: center;">Login</div>
+        <div style="display: flex; align-items: center; color: #A89A82; font-size: 12px;">›</div>
+        <div style="flex-grow: 1.1; background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 500; color: #16211D; display: flex; align-items: center; justify-content: center;">Parking Dashboard</div>
+        <div style="display: flex; align-items: center; color: #A89A82; font-size: 12px;">›</div>
+        <div style="flex-grow: 1.1; background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 500; color: #16211D; display: flex; align-items: center; justify-content: center;">ดูช่องจอดว่าง / ไม่ว่าง</div>
+        <div style="display: flex; align-items: center; color: #A89A82; font-size: 12px;">›</div>
+        <div style="flex-grow: 1; background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 500; color: #16211D; display: flex; align-items: center; justify-content: center;">รถเข้าลาน</div>
+        <div style="display: flex; align-items: center; color: #A89A82; font-size: 12px;">›</div>
+        <div style="flex-grow: 1.2; background: #EFE9DC; border: 1px solid #DDD3BF; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 600; color: #16211D; display: flex; align-items: center; justify-content: center;">จำนวนช่องว่างลดลง</div>
+        <div style="display: flex; align-items: center; color: #A89A82; font-size: 12px;">›</div>
+        <div style="flex-grow: 1.1; background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 500; color: #16211D; display: flex; align-items: center; justify-content: center;">รถออก + ชำระเงิน</div>
+        <div style="display: flex; align-items: center; color: #A89A82; font-size: 12px;">›</div>
+        <div style="flex-grow: 1.1; background: #2F6B5E; border: 1px solid #2F6B5E; border-radius: 8px; padding: 8px 4px; text-align: center; font-size: 10.5px; font-weight: 600; color: #FFFFFF; display: flex; align-items: center; justify-content: center;">รายได้เพิ่มขึ้น</div>
+      </div>
+    </div>
+
+    <!-- Row 4: Section 5 (Architecture) + Section 6 (Network & Security) -->
+    <div style="display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 14px;">
+
+      <!-- 5. Architecture -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">5</span>
+          <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">สถาปัตยกรรม</span>
+          <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Architecture</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 10px; padding: 11px 13px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="border: 1px dashed #C9C0AC; border-radius: 7px; padding: 5px 9px; font-size: 10.5px; color: #3B443E; text-align: center;">Internet</div>
+            <div style="text-align: center; color: #A89A82; font-size: 10px; line-height: 1;">↓</div>
+            <div style="border: 1px solid #DDD3BF; background: #F6F4EE; border-radius: 7px; padding: 5px 9px;">
+              <span style="display: block; font-size: 8.5px; font-weight: 700; text-transform: uppercase; color: #6B6257;">Public Subnet</span>
+              <span style="font-size: 11px; font-weight: 600; color: #16211D;">Nginx — Reverse Proxy</span>
+            </div>
+            <div style="text-align: center; color: #A89A82; font-size: 10px; line-height: 1;">↓</div>
+            <div style="border: 1px solid #C6D6D0; background: #EEF4F2; border-radius: 7px; padding: 5px 9px;">
+              <span style="display: block; font-size: 8.5px; font-weight: 700; text-transform: uppercase; color: #2F6B5E;">Private Network</span>
+              <span style="font-size: 11px; font-weight: 600; color: #16211D;">FastAPI Backend</span>
+            </div>
+            <div style="text-align: center; color: #A89A82; font-size: 10px; line-height: 1;">↓</div>
+            <div style="border: 1px solid #C6D6D0; background: #EEF4F2; border-radius: 7px; padding: 5px 9px; font-size: 11px; font-weight: 600; color: #16211D;">PostgreSQL</div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+            <span style="border: 1px solid #E0D9CB; border-radius: 16px; padding: 2px 8px; font-size: 9.5px; font-weight: 500; color: #3B443E;">Frontend: Vue.js</span>
+            <span style="border: 1px solid #E0D9CB; border-radius: 16px; padding: 2px 8px; font-size: 9.5px; font-weight: 500; color: #3B443E;">API: REST API</span>
+            <span style="border: 1px solid #E0D9CB; border-radius: 16px; padding: 2px 8px; font-size: 9.5px; font-weight: 500; color: #3B443E;">Container: Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Network & Security -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">6</span>
+          <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">เครือข่าย &amp; ความปลอดภัย</span>
+          <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Network &amp; Security</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 10px; padding: 11px 13px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; background: #F6F4EE; border-radius: 7px; padding: 6px 10px;">
+            <span style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: #B4501F;">แนวคิด Least Privilege</span>
+            <span style="font-size: 10.5px; color: #3B443E;">Internet <span style="color:#B4501F; font-weight:700;">✕</span> PostgreSQL</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">Database ไม่เปิดรับจาก Internet โดยตรง</span></div>
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">Backend เป็นผู้เข้าถึง Database เพียงทางเดียว</span></div>
+            <div style="display: flex; gap: 7px; align-items: flex-start;"><span style="margin-top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #2F6B5E; flex-shrink: 0;"></span><span style="font-size: 11px; line-height: 1.4; color: #3B443E;">Authentication / Authorization ทุกส่วนงาน</span></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 4px; font-size: 10px; color: #6B6257; border-top: 1px solid #EDE7DA; padding-top: 6px;">
+            <span>Internet</span><span style="color:#A89A82;">→</span><span>Nginx</span><span style="color:#A89A82;">→</span><span>Backend API</span><span style="color:#A89A82;">→</span><span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 5: Section 7 (Database Design) Full Width -->
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">7</span>
+        <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">โครงสร้างฐานข้อมูล</span>
+        <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Database Design</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 9px; overflow: hidden;">
+          <div style="background: #16211D; color: #F6F4EE; padding: 5px 10px; font-size: 11px; font-weight: 600; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">users</div>
+          <div style="padding: 7px 10px; font-size: 10.5px; line-height: 1.5; color: #3B443E; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">id · username<br>password_hash<br>role</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 9px; overflow: hidden;">
+          <div style="background: #16211D; color: #F6F4EE; padding: 5px 10px; font-size: 11px; font-weight: 600; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">parking_slots</div>
+          <div style="padding: 7px 10px; font-size: 10.5px; line-height: 1.5; color: #3B443E; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">id · slot_number<br>status</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 9px; overflow: hidden;">
+          <div style="background: #16211D; color: #F6F4EE; padding: 5px 10px; font-size: 11px; font-weight: 600; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">parking_sessions</div>
+          <div style="padding: 7px 10px; font-size: 10.5px; line-height: 1.5; color: #3B443E; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">id · slot_id<br>plate_number<br>entry_time · exit_time<br>fee</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 9px; overflow: hidden;">
+          <div style="background: #16211D; color: #F6F4EE; padding: 5px 10px; font-size: 11px; font-weight: 600; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">payments</div>
+          <div style="padding: 7px 10px; font-size: 10.5px; line-height: 1.5; color: #3B443E; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">id · session_id<br>amount<br>paid_at</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 6: Section 8 (Risks & Mitigation) Full Width -->
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="width: 17px; height: 17px; border-radius: 5px; background: #16211D; color: #F6F4EE; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">8</span>
+        <span style="font-family: 'Trirong', serif; font-size: 15px; font-weight: 600; color: #16211D;">ความเสี่ยง &amp; แนวทางรับมือ</span>
+        <span style="font-size: 9.5px; font-weight: 600; text-transform: uppercase; color: #6B6257;">Risks &amp; Mitigation</span>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E0D9CB; border-radius: 10px; padding: 11px 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px;">
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">ข้อมูลสถานะไม่ Real-time</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">ใช้ WebSocket / Polling</span></div>
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">ข้อมูลรายได้ไม่ตรง</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">ใช้ Transaction + Validation</span></div>
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">ระบบล่ม</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">Logging + Error Handling</span></div>
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">Database เสียหาย</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">Backup</span></div>
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">Scope ใหญ่เกินไป</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">จำกัด MVP</span></div>
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">Deployment ไม่สำเร็จ</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">ใช้ Docker ตั้งแต่ Dev</span></div>
+        <div style="display: flex; gap: 6px; align-items: baseline; font-size: 11px; line-height: 1.4;"><span style="color: #6B6257; flex-grow: 1;">Unauthorized Access</span><span style="color: #A89A82;">→</span><span style="font-weight: 600; color: #16211D; text-align: right; width: 44%;">Auth + Network Isolation</span></div>
+      </div>
+    </div>
+
+    <!-- Flexible space to push footer to bottom -->
+    <div style="flex-grow: 1;"></div>
+
+    <!-- Footer -->
+    <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #DDD3BF; padding-top: 8px;">
+      <span style="font-size: 9.5px; text-transform: uppercase; color: #6B6257;">Sprint 0 — Smart Parking Dashboard</span>
+      <span style="font-size: 9.5px; text-transform: uppercase; color: #6B6257;">Project One-Pager</span>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":794,"height":1123}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
